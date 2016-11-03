@@ -5,14 +5,14 @@ package adt.ds.stack;
  * Fixed array, with data ...
  * the top index change acording  push/pop
  */
-public class Stack {
+public class CharStack {
     private int maxSize;
-    protected long [] stackArray;
+    protected char [] stackArray;
     private  int top;
 
-    public Stack (int size){
+    public CharStack(int size){
         maxSize = size;
-        stackArray = new long[maxSize];
+        stackArray = new char[maxSize];
         top = -1;  // no elemnts in stack
     }
 
@@ -23,7 +23,7 @@ public class Stack {
      * Note : be careful to do not overload the stack
      * @param element
      */
-    public void push(long element){
+    public void push(char element){
         if (!isFull()) {
             top++;
             stackArray[top] = element;
@@ -36,18 +36,18 @@ public class Stack {
      * decrese top counter, and retur top element
      * @return
      */
-    public long pop(){
+    public char pop(){
         if (!isEmty()) {
             int old_top = top;
             top--;
             return stackArray[old_top];
         }else {
             System.out.println("The stack  is already empty");
-            return  -1;
+            return  '#';
         }
     }
 
-    public long peak(){
+    public char peak(){
         return stackArray[top];
     }
 
@@ -62,7 +62,7 @@ public class Stack {
     @Override
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer();
-        Stack mCopy = new Stack(maxSize);
+        CharStack mCopy = new CharStack(maxSize);
         mCopy = this;
 
         while (!mCopy.isEmty()){
