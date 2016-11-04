@@ -1,4 +1,5 @@
 import adt.Counter;
+import adt.ds.queue.Queue;
 import adt.ds.stack.CharStack;
 import adt.ds.stack.Stack;
 
@@ -13,10 +14,24 @@ public class Earth {
      * @param args
      */
     public static void main(String args[]){
-       // humanSample();
-       // counterSample();
-        //stackSample();
-        System.out.println(reverseWord("Alicia"));
+        // humanSample();
+        // counterSample();
+        // stackSample();
+        //System.out.println(reverseWord("Alicia"));
+
+        queueSample();
+    }
+
+    private static void queueSample() {
+        Queue mQueue = new Queue(3);
+        mQueue.insert(12);
+        mQueue.insert(120);
+        mQueue.insert(1200);
+        mQueue.insert(1);
+        mQueue.insert(1);
+        mQueue.insert(1);
+        mQueue.insert(1);
+        mQueue.view();
     }
 
     public static String reverseWord(String word){
@@ -28,7 +43,6 @@ public class Earth {
             mWordOnStak.push(mChar);
             i++;
         }
-
         return mWordOnStak.toString();
     }
 
@@ -45,6 +59,8 @@ public class Earth {
         mStack.push(40);
         mStack.push(60);
         mStack.push(80);
+        mStack.push(90);
+        mStack.push(100);
 
         while (!mStack.isEmty()){
             System.out.println(mStack.pop());
