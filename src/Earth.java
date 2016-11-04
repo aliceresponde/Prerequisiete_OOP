@@ -1,4 +1,5 @@
 import adt.Counter;
+import adt.ds.linkedList.Node;
 import adt.ds.queue.Queue;
 import adt.ds.stack.CharStack;
 import adt.ds.stack.Stack;
@@ -18,8 +19,50 @@ public class Earth {
         // counterSample();
         // stackSample();
         //System.out.println(reverseWord("Alicia"));
+        //queueSample();
 
-        queueSample();
+        nodeLinkedSample();
+    }
+
+    private static void nodeLinkedSample() {
+        Node nodeA = new Node();
+        nodeA.value = 1;
+
+        Node nodeB = new Node();
+        nodeB.value=  5;
+
+        Node nodeC = new Node();
+        nodeC.value = 2;
+
+        Node nodeD = new Node();
+        nodeD.value = 8;
+
+
+        // link a,b,c
+        nodeA.next = nodeB;
+        nodeB.next = nodeC;
+        nodeC.next = nodeD;
+
+        System.out.println("Linked nodes (A): " + linkedNodes(nodeA));
+        System.out.println("Linked nodes (B): " + linkedNodes(nodeB));
+    }
+
+    /**
+     * Count number of nodes linked to head (first node)
+     * @param head
+     * @return
+     */
+    public static int linkedNodes(Node head){
+        Node aux = new Node();
+        aux = head;
+
+        int nNodes = 0;
+        while (aux!= null){
+            nNodes++;
+            aux = aux.next;
+        }
+
+        return  nNodes;
     }
 
     private static void queueSample() {
