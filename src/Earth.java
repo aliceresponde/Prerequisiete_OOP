@@ -1,5 +1,6 @@
 import adt.Counter;
 import adt.ds.linkedList.Node;
+import adt.ds.linkedList.SinglyLinkedList;
 import adt.ds.queue.Queue;
 import adt.ds.stack.CharStack;
 import adt.ds.stack.Stack;
@@ -20,8 +21,19 @@ public class Earth {
         // stackSample();
         //System.out.println(reverseWord("Alicia"));
         //queueSample();
+        //nodeLinkedSample();
 
-        nodeLinkedSample();
+
+        SinglyLinkedList mList = new SinglyLinkedList();
+        mList.insertFirst(100);
+        mList.insertFirst(50);
+        mList.insertFirst(99);
+        mList.insertFirst(88);
+
+        mList.insertLast(99913);
+        mList.insertLast(7777777);
+
+        mList.displayList();
     }
 
     private static void nodeLinkedSample() {
@@ -43,8 +55,10 @@ public class Earth {
         nodeB.next = nodeC;
         nodeC.next = nodeD;
 
-        System.out.println("Linked nodes (A): " + linkedNodes(nodeA));
-        System.out.println("Linked nodes (B): " + linkedNodes(nodeB));
+        System.out.println("#Linked nodes (A): " + linkedNodes(nodeA));
+        System.out.println("#Linked nodes (B): " + linkedNodes(nodeB));
+        System.out.println("#Linked nodes (C): " + linkedNodes(nodeC));
+
     }
 
     /**
