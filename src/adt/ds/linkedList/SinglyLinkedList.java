@@ -43,22 +43,17 @@ public class SinglyLinkedList {
             while ( currentNode.next != null ){
                 currentNode = currentNode.next;
             }
-
             currentNode.next = newNode;
         }
-
-
     }
 
     public void  displayList(){
         System.out.println("List from Head --> Tail :");
         Node currentN = first;
-
         while (currentN != null){
             currentN.displayNode();
             currentN = currentN.next;
         }
-
         System.out.println();
     }
 }

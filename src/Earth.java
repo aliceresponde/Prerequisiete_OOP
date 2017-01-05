@@ -22,16 +22,26 @@ public class Earth {
         //System.out.println(reverseWord("Alicia"));
         //queueSample();
         //nodeLinkedSample();
+        singlyLinkedListSample();
+    }
 
-
+    /**
+     * Create a siglyLinkedList, insert numbers as first
+     * {88,99,50,100}
+     * Insetert others at the end
+     * {88,99,50,100,9913, 777777}
+     */
+    private static void singlyLinkedListSample() {
         SinglyLinkedList mList = new SinglyLinkedList();
         mList.insertFirst(100);
         mList.insertFirst(50);
         mList.insertFirst(99);
         mList.insertFirst(88);
+        //88,99,50,100
 
         mList.insertLast(99913);
         mList.insertLast(7777777);
+        //88,99,50,100,9913, 777777
 
         mList.displayList();
     }
